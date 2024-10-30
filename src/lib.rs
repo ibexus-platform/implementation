@@ -1,3 +1,5 @@
+#![cfg_attr(not(feature = "std"), no_std)]
+
 //! A crate for targeting and accessing _actual implementation_.
 //!
 //! Take an example trait:
@@ -202,7 +204,7 @@ impl<T> From<T> for Impl<T> {
     }
 }
 
-impl<T> std::ops::Deref for Impl<T> {
+impl<T> core::ops::Deref for Impl<T> {
     type Target = T;
 
     fn deref(&self) -> &Self::Target {
@@ -210,7 +212,7 @@ impl<T> std::ops::Deref for Impl<T> {
     }
 }
 
-impl<T> std::ops::DerefMut for Impl<T> {
+impl<T> core::ops::DerefMut for Impl<T> {
     fn deref_mut(&mut self) -> &mut Self::Target {
         &mut self.0
     }

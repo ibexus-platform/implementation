@@ -10,5 +10,6 @@ keywords = ["impl", "implementation", "actual", "real"]
 categories = ["rust-patterns"]
 
 [features]
-default = ["std"]
+default = []
 std = []
+
